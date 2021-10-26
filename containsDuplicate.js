@@ -1,12 +1,14 @@
-var containsDuplicate = function (nums) {
-  for (let i = 0; i < nums.length; ++i) {
-    for (let j = 0; j < i; ++j) {
+const containsDuplicate = (nums) => {
+  len = nums.length;
+  if (len === 0) return;
+  for (let i = 0; i < len; i++) {
+    for (let j = i + 1; j < len; j++) {
       if (nums[i] == nums[j]) {
         return true;
-      } 
+      }
     }
   }
-  return false
+  return false;
 };
 
 console.log(containsDuplicate([1, 2, 3, 1]));

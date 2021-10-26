@@ -16,15 +16,18 @@ Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 // Faster method for twoSum.js : O(n) time complexity
 
 const twoSum = (nums, target) => {
-  let prevNumValues = {};
-  for (let i = 0; i < nums.length; i++) {
-    let currentNum = nums[i];
-    prevNumValues[currentNum] = i;
+  if(nums.length === 0) return 
+  const numObjects = {}
+  for ( let i = 0; i< nums.length; i++){
+    let thisNum = nums[i]
+    // thisNum is key, i is value i.e 
+    numObjects[thisNum] = i
   }
-  for (var i = 0; i < nums.length; i++) {
-    let diff = target - nums[i];
-    if (prevNumValues.hasOwnProperty(diff) && prevNumValues[diff] != i) {
-      return [i, prevNumValues[diff]];
+  // console.log(numObjects)
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i]
+    if(numObjects.hasOwnProperty(diff) && numObjects[diff] !== i ){
+      return [i, numObjects[diff]]
     }
   }
 };
