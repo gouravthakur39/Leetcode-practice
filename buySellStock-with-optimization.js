@@ -5,7 +5,7 @@ const maxProfit = (prices) => {
     for (const price of prices) {
       const currentProfit = price - minPrice;
       minPrice = Math.min(minPrice, price);
-      maxProft = Math.max(maxProft, price - minPrice);
+      maxProft = Math.max(maxProft, currentProfit);
     }
   
     return maxProft;
